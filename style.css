@@ -2123,3 +2123,495 @@ footer { background: #050814; }
     *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
 
+/* =========================================================
+   GLORYWAVE CONTACT PAGE
+========================================================= */
+
+.contact-page {
+    min-height: 100vh;
+    padding: 150px 20px 100px;
+}
+
+/* Contact heading */
+.contact-heading {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.contact-heading .section-tag {
+    margin-bottom: 12px;
+}
+
+.contact-heading h1 {
+    font-size: clamp(42px, 6vw, 68px);
+    font-weight: 800;
+    letter-spacing: -3px;
+}
+
+.contact-heading h1 span {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.contact-heading p {
+    max-width: 550px;
+    margin: 18px auto 0;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   CONTACT CARDS
+========================================================= */
+
+[id^="person"] {
+    position: relative;
+
+    width: min(620px, 100%);
+    margin: 22px auto;
+
+    padding: 26px 28px;
+
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(35, 47, 85, 0.78),
+            rgba(12, 18, 38, 0.88)
+        );
+
+    border: 1px solid rgba(207, 222, 255, 0.13);
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.22);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Glow on left side */
+[id^="person"]::before {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top: 20%;
+    width: 3px;
+    height: 60%;
+
+    border-radius: 10px;
+
+    background: var(--gradient);
+
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+
+/* Hover */
+[id^="person"]:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(141, 119, 255, 0.4);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.32);
+}
+
+[id^="person"]:hover::before {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   PERSON INFORMATION
+========================================================= */
+
+[id^="person"] {
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* Name */
+[id^="person"]::after {
+    pointer-events: none;
+}
+
+
+/* Phone number */
+[id^="person"] a[href^="tel:"] {
+    color: #8edcff;
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+[id^="person"] a[href^="tel:"]:hover {
+    color: white;
+}
+
+
+/* =========================================================
+   WHATSAPP BUTTON
+========================================================= */
+
+[id^="person"] a[href*="wa.me"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+}
+
+
+/* Button */
+[id^="person"] button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 122px;
+
+    padding: 11px 18px !important;
+    margin: 0 0 0 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #25D366,
+            #18b957
+        ) !important;
+
+    border: none !important;
+    border-radius: 100px !important;
+
+    color: white !important;
+
+    font-family: inherit;
+    font-size: 13px !important;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(37, 211, 102, 0.18);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* Button hover */
+[id^="person"] button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(37, 211, 102, 0.32);
+}
+
+
+/* Button click */
+[id^="person"] button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .contact-page {
+        padding: 120px 14px 70px;
+    }
+
+    .contact-heading {
+        margin-bottom: 35px;
+    }
+
+    .contact-heading h1 {
+        font-size: 44px;
+        letter-spacing: -2px;
+    }
+
+    .contact-heading p {
+        font-size: 13px;
+    }
+
+    [id^="person"] {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 8px;
+
+        margin: 18px auto;
+        padding: 23px 20px;
+    }
+
+    [id^="person"] button {
+        margin: 5px 0 0;
+        width: auto;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .contact-page {
+        padding-top: 105px;
+    }
+
+    .contact-heading h1 {
+        font-size: 38px;
+    }
+
+    [id^="person"] {
+        padding: 20px 17px;
+        font-size: 14px;
+    }
+
+}
+
+
+/* T & C style */
+
+
+
+
+/* =========================================================
+   MOBILE NAVBAR - FINAL FIX
+========================================================= */
+
+@media (max-width: 760px) {
+
+    /* Keep navbar clean */
+    .navbar {
+        height: auto;
+        min-height: 70px;
+        padding: 12px 0;
+    }
+
+    .nav-container {
+        position: relative;
+        width: calc(100% - 28px);
+        min-height: 46px;
+    }
+
+    /* Logo */
+    .logo img {
+        width: 110px;
+        height: auto;
+    }
+
+    /* Hamburger button */
+    .menu-btn {
+        display: flex !important;
+
+        width: 42px;
+        height: 42px;
+
+        padding: 9px !important;
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+
+        border: 1px solid rgba(255,255,255,0.12) !important;
+        border-radius: 11px;
+
+        background: rgba(255,255,255,0.04) !important;
+
+        cursor: pointer;
+
+        flex-shrink: 0;
+
+        position: relative;
+        z-index: 1002;
+    }
+
+    /* Hamburger lines */
+    .menu-btn span {
+        display: block;
+
+        width: 24px;
+        height: 2px;
+
+        margin: 0 !important;
+
+        background: #ffffff;
+
+        border-radius: 10px;
+
+        transition:
+            transform 0.25s ease,
+            opacity 0.2s ease;
+    }
+
+    /* Mobile menu */
+    .nav-menu {
+        position: absolute !important;
+
+        top: calc(100% + 10px) !important;
+        left: 0 !important;
+        right: 0 !important;
+
+        display: none;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 4px;
+
+        padding: 10px !important;
+
+        background:
+            rgba(8, 8, 23, 0.98) !important;
+
+        border:
+            1px solid rgba(255,255,255,0.10);
+
+        border-radius: 18px;
+
+        box-shadow:
+            0 20px 50px rgba(0,0,0,0.45);
+
+        backdrop-filter: blur(20px);
+
+        z-index: 1001;
+    }
+
+    /* When JS adds active */
+    .nav-menu.active {
+        display: flex !important;
+    }
+
+    /* Menu links */
+    .nav-menu > a:not(.nav-btn) {
+        display: block;
+
+        width: 100%;
+
+        padding: 12px 14px !important;
+
+        border-radius: 10px;
+
+        color: #b9b7d2;
+
+        font-size: 13px;
+        font-weight: 600;
+
+        text-align: left;
+
+        transition: 0.2s ease;
+    }
+
+    .nav-menu > a:not(.nav-btn):hover {
+        background: rgba(255,255,255,0.05);
+        color: #ffffff;
+    }
+
+    /* Let's Talk */
+    .nav-menu .nav-btn {
+        display: block;
+
+        width: 100%;
+
+        margin-top: 5px;
+
+        padding: 11px 15px !important;
+
+        text-align: center;
+
+        border-radius: 100px;
+    }
+
+    /* Hamburger → X */
+    .menu-btn.is-open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-btn.is-open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-btn.is-open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .nav-container {
+        width: calc(100% - 24px);
+    }
+
+    .logo img {
+        width: 105px;
+    }
+
+    .menu-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .menu-btn span {
+        width: 22px;
+    }
+}
+
+/* =========================================================
+   REMOVE MOBILE TAP / FOCUS BLUE HIGHLIGHT
+========================================================= */
+
+button,
+a,
+input,
+textarea,
+select {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Remove default focus outline */
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+}
+
+/* Remove focus box on mobile */
+button:focus-visible,
+a:focus-visible {
+    outline: none;
+    box-shadow: none;
+}
